@@ -3,7 +3,7 @@ const data = require('./data.json');
 function getTopNCustomers(orders, n = 30) {
   const counts = {};
 
-  data.forEach(datum => {
+  orders.forEach(datum => {
     const { name } = datum.customer;
 
     counts[name] = counts[name] || {
