@@ -1,7 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import { setWhoIAm } from './actions';
+import withRedux from './withRedux';
 
 function App(props) {
   const { setWhoIAm, whoAmI } = props;
@@ -15,11 +14,6 @@ function App(props) {
     </div>
   );
 }
-
-const withRedux = connect(
-  state => state,
-  { setWhoIAm }
-);
 
 export { App };
 export default withRedux(App);

@@ -623,18 +623,6 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 
 /***/ }),
 
-/***/ "./src/App.jsx":
-/*!*********************!*\
-  !*** ./src/App.jsx ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.App = undefined;\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _actions = __webpack_require__(/*! ./actions */ \"./src/actions.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction App(props) {\n  var setWhoIAm = props.setWhoIAm,\n      whoAmI = props.whoAmI;\n\n\n  return _react2.default.createElement(\n    'div',\n    { className: 'container' },\n    _react2.default.createElement(\n      'h1',\n      null,\n      'I am ',\n      whoAmI,\n      '!'\n    ),\n    _react2.default.createElement(\n      'button',\n      { className: 'btn btn-primary', onClick: setWhoIAm },\n      'Set who I am'\n    )\n  );\n}\n\nvar withRedux = (0, _reactRedux.connect)(function (state) {\n  return state;\n}, { setWhoIAm: _actions.setWhoIAm });\n\nexports.App = App;\nexports.default = withRedux(App);\n\n//# sourceURL=webpack:///./src/App.jsx?");
-
-/***/ }),
-
 /***/ "./src/actions.js":
 /*!************************!*\
   !*** ./src/actions.js ***!
@@ -647,6 +635,30 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./src/components/App.jsx":
+/*!********************************!*\
+  !*** ./src/components/App.jsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.App = undefined;\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _withRedux = __webpack_require__(/*! ./withRedux */ \"./src/components/withRedux.js\");\n\nvar _withRedux2 = _interopRequireDefault(_withRedux);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction App(props) {\n  var setWhoIAm = props.setWhoIAm,\n      whoAmI = props.whoAmI;\n\n\n  return _react2.default.createElement(\n    'div',\n    { className: 'container' },\n    _react2.default.createElement(\n      'h1',\n      null,\n      'I am ',\n      whoAmI,\n      '!'\n    ),\n    _react2.default.createElement(\n      'button',\n      { className: 'btn btn-primary', onClick: setWhoIAm },\n      'Set who I am'\n    )\n  );\n}\n\nexports.App = App;\nexports.default = (0, _withRedux2.default)(App);\n\n//# sourceURL=webpack:///./src/components/App.jsx?");
+
+/***/ }),
+
+/***/ "./src/components/withRedux.js":
+/*!*************************************!*\
+  !*** ./src/components/withRedux.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _actions = __webpack_require__(/*! ../actions */ \"./src/actions.js\");\n\nvar withRedux = (0, _reactRedux.connect)(function (state) {\n  return state;\n}, { setWhoIAm: _actions.setWhoIAm });\n\nexports.default = withRedux;\n\n//# sourceURL=webpack:///./src/components/withRedux.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -655,7 +667,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _store = __webpack_require__(/*! ./store */ \"./src/store.js\");\n\nvar _App = __webpack_require__(/*! ./App */ \"./src/App.jsx\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar store = (0, _store.createStore)();\n\n_reactDom2.default.render(_react2.default.createElement(\n  _reactRedux.Provider,\n  { store: store },\n  _react2.default.createElement(_App2.default, null)\n), document.getElementById('app'));\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _store = __webpack_require__(/*! ./store */ \"./src/store.js\");\n\nvar _App = __webpack_require__(/*! ./components/App */ \"./src/components/App.jsx\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar store = (0, _store.createStore)();\n\n_reactDom2.default.render(_react2.default.createElement(\n  _reactRedux.Provider,\n  { store: store },\n  _react2.default.createElement(_App2.default, null)\n), document.getElementById('app'));\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
