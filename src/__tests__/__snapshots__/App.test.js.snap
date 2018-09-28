@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> should match the snapshot 1`] = `"<div class=\\"container\\"><h1>I am Thanos!</h1><button class=\\"btn btn-primary\\">Set who I am</button></div>"`;
